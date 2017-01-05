@@ -1,3 +1,11 @@
+// Copyright 2016 HeeHoon Kim
+//
+// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
+// http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
+// <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
+// option. This file may not be copied, modified, or distributed
+// except according to those terms.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -33,7 +41,7 @@ int main(int argc, char** argv) {
 
   for(i = 0; i < num_images; i++)
   {
-    fscanf(io_file, "%s", image_files[i]); 
+    fscanf(io_file, "%s", image_files[i]);
   }
   fclose(io_file);
 
@@ -45,14 +53,14 @@ int main(int argc, char** argv) {
     strcat(filename, "network/");
     strcat(filename, file_list[i]);
     io_file = fopen(filename, "rb");
-    fseek(io_file, 0, SEEK_END); 
+    fseek(io_file, 0, SEEK_END);
     sizes[i] = ftell(io_file);
     vggnet_size += sizes[i];
     fclose(io_file);
   }
 
   images = (float *)malloc(sizeof(float) * 224 * 224 * 3 * num_images);
-  network = (float *)malloc(sizeof(float) * vggnet_size); 
+  network = (float *)malloc(sizeof(float) * vggnet_size);
   labels = (int *)malloc(sizeof(int) * num_images);
   confidences = (float *)malloc(sizeof(float) * num_images);
 
