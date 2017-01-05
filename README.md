@@ -21,3 +21,13 @@ Convolution 커널만 열심히 최적화 한 프로젝트.
 2. 나누기, 나머지 연산을 곱셈, 시프트 연산으로 대체 했는데 진짜 더 빠른지는 확인 안함. 확인 필요.
 3. FC 레이어도 사실 행렬곱 커널 쓰면 더 빠르다. 귀찮아서 안 고침.
 4. 사실 메모리 속도 고려하면 global에서는 128 단위 블록킹, local에서는 8 단위 블록킹을 해주어야 맞다. 근데 레이어 중에 크기가 64인 녀석이 있어서 귀찮아서 64, 4 단위 블록킹으로 함. 그래서 이론상 최대 성능의 1/4 정도만 나온다. 블록킹 크기별로 커널을 따로 만들어서 돌리면 최소 2배는 더 빨라질 것으로 예상.
+
+<br>
+
+--------
+*MC2016PRJ* is primarily distributed under the terms of both the [MIT license]
+and the [Apache License (Version 2.0)]. See [COPYRIGHT] for details.
+
+[MIT license]: LICENSE-MIT
+[Apache License (Version 2.0)]: LICENSE-APACHE
+[COPYRIGHT]: COPYRIGHT
