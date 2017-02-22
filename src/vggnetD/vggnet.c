@@ -421,12 +421,12 @@ void *proc(void *arg) {
   get_param(&mynet, 512, &b5_2, 0, 0, tid, 0);
   get_param(&mynet, 3 * 3 * 512 * 512, &f5_3, 512, 512, tid, 0);
   get_param(&mynet, 512, &b5_3, 0, 0, tid, 0);
-  get_param(&mynet, 7 * 7 * 512 * 4096, &w1, 0, 0, tid, 1);
-  get_param(&mynet, 4096, &b1, 0, 0, tid, 1);
-  get_param(&mynet, 4096 * 4096, &w2, 0, 0, tid, 1);
-  get_param(&mynet, 4096, &b2, 0, 0, tid, 1);
-  get_param(&mynet, 4096 * 1000, &w3, 0, 0, tid, 1);
-  get_param(&mynet, 1000, &b3, 0, 0, tid, 1);
+  get_param(&mynet, 7 * 7 * 512 * 4096, &w1, 0, 0, tid, 0);
+  get_param(&mynet, 4096, &b1, 0, 0, tid, 0);
+  get_param(&mynet, 4096 * 4096, &w2, 0, 0, tid, 0);
+  get_param(&mynet, 4096, &b2, 0, 0, tid, 0);
+  get_param(&mynet, 4096 * 1000, &w3, 0, 0, tid, 0);
+  get_param(&mynet, 1000, &b3, 0, 0, tid, 0);
 
   float *fc3_host;
   fc3_host = (float*)malloc(sizeof(float) * MAX_BATCH * 1000);
